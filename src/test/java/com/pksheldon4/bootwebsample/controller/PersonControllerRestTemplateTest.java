@@ -45,7 +45,7 @@ public class PersonControllerRestTemplateTest {
     private PersonService personService;
 
 
-    @BeforeClass
+    @Before
     public void setupPersons() {
 
         Collection<Person> people = new ArrayList<>();
