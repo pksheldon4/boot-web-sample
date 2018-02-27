@@ -9,7 +9,8 @@ spring:
 
 logging:
   level:
-    org.springframework.core: WARN
+    root: DEBUG
+    org.springframework.core: DEBUG
 
 management:
   endpoints:
@@ -18,7 +19,7 @@ management:
 
 server:
   ssl:
-    key-store:classpath: keystore.p12
+    key-store: classpath:keystore.p12
     key-store-password: changeit
     key-alias: tomcat
   port: 8443
