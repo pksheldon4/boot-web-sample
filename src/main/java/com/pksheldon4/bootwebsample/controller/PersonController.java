@@ -5,14 +5,20 @@ import com.pksheldon4.bootwebsample.service.PersonService;
 import com.pksheldon4.bootwebsample.service.PersonServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 class PersonController {
 
-    @Autowired
-    private PersonService personService;
+    private final PersonService personService;
+
+    public PersonController(PersonService personService)
+    {
+        this.personService = personService;
+    }
+
 
     @GetMapping("/people")
     public Iterable<Person> listPeople() {
@@ -20,8 +26,8 @@ class PersonController {
         return personService.findAll();
     }
 
-    @GetMapping("/person")
-    public Person findPerson(@RequestParam Long id) {
+    @GetMapping("/person/{id}")
+    public Person findPerson(@PathVariable Long id) {
 
         return personService.findById(id);
     }

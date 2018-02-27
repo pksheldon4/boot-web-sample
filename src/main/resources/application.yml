@@ -1,0 +1,24 @@
+spring:
+  jpa:
+    open-in-view: true
+    hibernate:
+      ddl-auto: validate
+  h2:
+    console:
+      enabled: true
+
+logging:
+  level:
+    org.springframework.core: WARN
+
+management:
+  endpoints:
+    web:
+      expose: health
+
+server:
+  ssl:
+    key-store:classpath: keystore.p12
+    key-store-password: changeit
+    key-alias: tomcat
+  port: 8443
