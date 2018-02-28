@@ -1,0 +1,19 @@
+---
+resources:
+- name: source-code
+  type: git
+  source:
+    uri: https://github.com/pksheldon4/boot-web-sample.git
+    branch: master
+
+jobs:
+- name: package
+  plan:
+  - get: source-code
+    trigger: true
+  - task: package
+    privileged: true
+    file: source-code/ci/tasks/package.yml
+  - task: test
+    privileged: true
+    file: source-code/ci/tasks/test.yml    
