@@ -1,0 +1,10 @@
+applications:
+- name: bootwebsample
+  disk_quota: 1G
+  instances: 1
+  memory: 768M
+  buildpack: java_buildpack
+  #  routes:
+  #- route: bootwebsample-ps.cfapps.io
+  #stack: cflinuxfs2
+  path: ./target/boot-web-sample-0.0.1-SNAPSHOT.jar

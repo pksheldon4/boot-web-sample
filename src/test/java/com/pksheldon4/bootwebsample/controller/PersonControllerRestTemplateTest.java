@@ -34,7 +34,7 @@ public class PersonControllerRestTemplateTest {
     private AbstractConfigurableWebServerFactory webServerFactory;
 
     @Autowired
-    private TestRestTemplate restTemplate = new TestRestTemplate();
+    private TestRestTemplate restTemplate;
     private static ObjectMapper mapper = new ObjectMapper();
 
     @MockBean

@@ -9,8 +9,8 @@ spring:
 
 logging:
   level:
-    root: DEBUG
-    org.springframework.core: DEBUG
+    root: INFO
+    org.springframework.core: INFO
 
 management:
   endpoints:
@@ -22,4 +22,4 @@ server:
     key-store: classpath:keystore.p12
     key-store-password: changeit
     key-alias: tomcat
-  port: 8443
+#  port: 8443

@@ -1,0 +1,9 @@
+logging:
+  level:
+    org.springframework.test: DEBUG
+server:
+  ssl:
+    key-store: classpath:keystore.p12
+    key-store-password: changeit
+    key-alias: tomcat
+  port: 8443
